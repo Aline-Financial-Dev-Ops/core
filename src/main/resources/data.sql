@@ -10,6 +10,13 @@ VALUES ('ALINE', 'Aline Financial');
 
 INSERT IGNORE INTO merchant (code, name)
 VALUES ('NONE', 'None');
+
+INSERT IGNORE INTO card_issuer (issuer_name, card_number_length)
+VALUES ('VISA', 16);
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES ('4', 'VISA');
+
 /*********************************************************************
 ******************* USAGE WITH YOUR PROJECT **************************
 **********************************************************************
