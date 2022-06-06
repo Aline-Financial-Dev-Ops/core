@@ -31,6 +31,7 @@ public class Payment {
     private int id;
     @Min(0)
     private int amount;
+    private String description;
     @NotNull
     private LocalDate dueDate;
     @Enumerated(EnumType.STRING)
