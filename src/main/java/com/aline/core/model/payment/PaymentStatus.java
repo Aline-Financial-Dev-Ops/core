@@ -1,4 +1,4 @@
-package com.aline.core.model;
+package com.aline.core.model.payment;
 
 public enum PaymentStatus {
     PENDING,
