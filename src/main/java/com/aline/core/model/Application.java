@@ -1,5 +1,6 @@
 package com.aline.core.model;
 
+import com.aline.core.model.loan.LoanType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,12 +9,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -51,12 +56,6 @@ public class Application implements Serializable {
     private ApplicationType applicationType;
 
     /**
-     * Amount the application(s) are applying for
-     */
-    @Min(0)
-    private Integer applicationAmount;
-
-    /**
      * Application Status
      * @see ApplicationStatus
      */
@@ -82,4 +81,14 @@ public class Application implements Serializable {
     @ToString.Exclude
     @JsonManagedReference
     private Set<Applicant> applicants;
+
+    /**
+     * If type is LOAN then application amount is required
+     */
+    private Integer applicationAmount;
+
+    /**
+     * Loan type is required if application type is loan
+     */
+    private LoanType loanType;
 }
