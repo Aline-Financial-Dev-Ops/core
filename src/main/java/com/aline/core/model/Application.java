@@ -18,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Set;
@@ -48,6 +49,12 @@ public class Application implements Serializable {
     @NotNull(message = "Application type is required.")
     @Enumerated(EnumType.STRING)
     private ApplicationType applicationType;
+
+    /**
+     * Amount the application(s) are applying for
+     */
+    @Min(0)
+    private Integer applicationAmount;
 
     /**
      * Application Status
