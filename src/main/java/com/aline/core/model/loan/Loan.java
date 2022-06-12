@@ -1,6 +1,5 @@
 package com.aline.core.model.loan;
 
-import com.aline.core.model.account.Account;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
