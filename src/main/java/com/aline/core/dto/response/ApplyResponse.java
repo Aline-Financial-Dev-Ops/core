@@ -2,6 +2,7 @@ package com.aline.core.dto.response;
 
 import com.aline.core.model.ApplicationStatus;
 import com.aline.core.model.ApplicationType;
+import com.aline.core.model.loan.LoanType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,8 +39,11 @@ public class ApplyResponse implements Serializable {
      *     <li>Etc...</li>
      * </ul>
      */
-    private ApplicationType type;
+    private ApplicationType applicationType;
 
+    private LoanType loanType;
+
+    private Integer applyAmount;
 
     /**
      * All applicants that have applied under the referenced application
