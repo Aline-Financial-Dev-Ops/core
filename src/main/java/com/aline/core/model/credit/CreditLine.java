@@ -26,14 +26,9 @@ public class CreditLine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Min(1)
-    @NotNull
-    private Integer limit;
-
-    @NotNull
-    private Float apr;
+    private int id;
+    private int creditLimit;
+    private float apr;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -41,7 +36,7 @@ public class CreditLine {
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    private CreditLineType type;
+    private CreditLineType creditLineType;
 
     @NotNull
     private LocalDate startDate;

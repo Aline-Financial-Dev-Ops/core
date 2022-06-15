@@ -11,6 +11,8 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.util.List;
@@ -26,7 +28,9 @@ public class LoanAccount extends Account {
     @OneToOne
     private Loan loan;
     @OneToMany
+    @JoinTable(name = "loan_account_payments")
     private List<Payment> payments;
     @OneToMany
+    @JoinTable(name = "loan_account_payment_history")
     private List<PaymentRecord> paymentHistory;
 }
