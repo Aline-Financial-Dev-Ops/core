@@ -1,6 +1,6 @@
-package com.aline.core.model.loan;
+package com.aline.core.model.credit;
 
-import com.aline.core.model.account.Account;
+import com.aline.core.model.card.CardIssuer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,8 +13,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -23,24 +22,25 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Loan {
+public class CreditLine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int creditLimit;
     private float apr;
-    private int amount;
-    private int term;
+    private int minPayment;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private CreditLineStatus status;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private CreditLineType creditLineType;
+
+    @NotNull
     private LocalDate startDate;
 
-    @Enumerated(EnumType.STRING)
-    private LoanType loanType;
-
-    @Enumerated(EnumType.STRING)
-    private LoanStatus status;
-
-    @ManyToOne
-    @JoinColumn(name = "deposit_account_id")
-    private Account depositAccount;
 
 }

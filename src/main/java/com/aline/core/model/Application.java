@@ -1,5 +1,7 @@
 package com.aline.core.model;
 
+import com.aline.core.model.account.Account;
+import com.aline.core.model.credit.CreditCardOffer;
 import com.aline.core.model.loan.LoanType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
@@ -91,4 +93,18 @@ public class Application implements Serializable {
      * Loan type is required if application type is loan
      */
     private LoanType loanType;
+
+    /**
+     * The credit card offer that a credit card will be created from
+     */
+    @ManyToOne
+    @JoinColumn(name = "card_offer_id")
+    private CreditCardOffer cardOffer;
+
+    /**
+     * Account that a loan will be depositing into
+     */
+    @ManyToOne
+    @JoinColumn(name = "deposit_account_id")
+    private Account depositAccount;
 }
