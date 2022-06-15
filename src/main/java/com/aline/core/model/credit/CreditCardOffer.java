@@ -36,6 +36,9 @@ public class CreditCardOffer {
     private Float maxApr;
 
     @NotNull
+    private Integer minPayment;
+
+    @NotNull
     @NotBlank
     @Length(max = 30)
     private String offerName;
@@ -47,7 +50,5 @@ public class CreditCardOffer {
     @ManyToOne(optional = false)
     @NotNull
     private CardIssuer cardIssuer;
-
-    private String cardImageUrl;
 
 }
