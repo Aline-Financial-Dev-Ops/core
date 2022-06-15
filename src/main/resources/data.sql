@@ -10,6 +10,30 @@ VALUES ('ALINE', 'Aline Financial');
 
 INSERT IGNORE INTO merchant (code, name)
 VALUES ('NONE', 'None');
+
+INSERT IGNORE INTO card_issuer (issuer_name, card_number_length)
+VALUES ('VISA', 16);
+
+INSERT IGNORE INTO card_issuer (issuer_name, card_number_length)
+VALUES ('MASTERCARD', 16);
+
+INSERT IGNORE INTO card_issuer (issuer_name, card_number_length)
+VALUES ('DISCOVER', 16);
+
+INSERT IGNORE INTO card_issuer (issuer_name, card_number_length)
+VALUES ('AMEX', 16);
+
+INSERT IGNORE INTO credit_card_offer (amount, offer_name, description, card_issuer_name, credit_line_type, min_apr, max_apr, min_payment)
+VALUES (500000, 'Aline Standard', 'Standard credit card.', 'VISA', 'STANDARD', 10.5, 24.99, 25);
+
+INSERT IGNORE INTO credit_card_offer (amount, offer_name, description, card_issuer_name, credit_line_type, min_apr, max_apr, min_payment)
+VALUES (250000, 'Aline Student', 'Student credit card.', 'DISCOVER', 'STUDENT', 10.5, 16.99, 25);
+
+INSERT IGNORE INTO credit_card_offer (amount, offer_name, description, card_issuer_name, credit_line_type, min_apr, max_apr, min_payment)
+VALUES (800000, 'Aline Air', 'Airline credit card.', 'AMEX', 'AIRLINE', 9.5, 12.99, 25);
+
+INSERT IGNORE INTO credit_card_offer (amount, offer_name, description, card_issuer_name, credit_line_type, min_apr, max_apr, min_payment)
+VALUES (800000, 'Aline Rewards', 'Rewards credit card.', 'MASTERCARD', 'REWARDS', 11.5, 24.99, 25);
 /*********************************************************************
 ******************* USAGE WITH YOUR PROJECT **************************
 **********************************************************************

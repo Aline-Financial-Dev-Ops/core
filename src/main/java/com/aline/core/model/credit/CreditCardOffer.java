@@ -8,9 +8,12 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -49,6 +52,11 @@ public class CreditCardOffer {
 
     @ManyToOne(optional = false)
     @NotNull
+    @JoinColumn(name = "card_issuer_name")
     private CardIssuer cardIssuer;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private CreditLineType creditLineType;
 
 }
