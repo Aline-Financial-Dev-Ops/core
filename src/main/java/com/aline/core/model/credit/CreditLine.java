@@ -1,5 +1,6 @@
 package com.aline.core.model.credit;
 
+import com.aline.core.model.card.CardIssuer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

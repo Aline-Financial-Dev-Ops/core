@@ -18,7 +18,55 @@ INSERT IGNORE INTO card_issuer (issuer_name, card_number_length)
 VALUES ('MASTERCARD', 16);
 
 INSERT IGNORE INTO card_issuer (issuer_name, card_number_length)
-VALUES ('DISCOVER', 16);
+VALUES ('DISCOVER', 15);
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (4, 'VISA');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (34, 'AMEX');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (37, 'AMEX');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (51, 'MASTERCARD');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (52, 'MASTERCARD');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (53, 'MASTERCARD');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (54, 'MASTERCARD');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (55, 'MASTERCARD');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (6011, 'DISCOVER');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (644, 'DISCOVER');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (645, 'DISCOVER');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (646, 'DISCOVER');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (647, 'DISCOVER');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (648, 'DISCOVER');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (649, 'DISCOVER');
+
+INSERT IGNORE INTO issuer_identification_number (iin, card_issuer_name)
+VALUES (65, 'DISCOVER');
 
 INSERT IGNORE INTO card_issuer (issuer_name, card_number_length)
 VALUES ('AMEX', 16);

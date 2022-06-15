@@ -70,7 +70,7 @@ public class ApplyRequest {
      * applying for.
      */
     @Nullable
-    private String cardOfferId;
+    private int cardOfferId;
 
     @AccountNumber
     @Nullable

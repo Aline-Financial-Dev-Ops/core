@@ -1,5 +1,6 @@
 package com.aline.core.model.loan;
 
+import com.aline.core.model.account.Account;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,6 +13,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 @Entity
@@ -35,5 +38,9 @@ public class Loan {
 
     @Enumerated(EnumType.STRING)
     private LoanStatus status;
+
+    @ManyToOne
+    @JoinColumn(name = "deposit_account_id")
+    private Account depositAccount;
 
 }
