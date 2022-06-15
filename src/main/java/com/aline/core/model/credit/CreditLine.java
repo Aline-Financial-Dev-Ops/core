@@ -12,7 +12,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
@@ -29,6 +28,7 @@ public class CreditLine {
     private int id;
     private int creditLimit;
     private float apr;
+    private int minPayment;
 
     @NotNull
     @Enumerated(EnumType.STRING)
