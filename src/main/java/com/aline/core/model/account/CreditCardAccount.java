@@ -45,4 +45,18 @@ public class CreditCardAccount extends Account {
     public void increaseAvailableCredit(int amount) {
         availableCredit += amount;
     }
+
+    // Reversed functionality for credit cards
+    // Balance is how much is owed instead of how much is available
+    @Override
+    public void increaseBalance(int amount) {
+        setBalance(getBalance() - amount);
+    }
+
+    // Reversed functionality for credit cards
+    // Balance is how much is owed instead of how much is available
+    @Override
+    public void decreaseBalance(int amount) {
+        setBalance(getBalance() + amount);
+    }
 }
