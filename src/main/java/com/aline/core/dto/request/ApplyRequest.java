@@ -39,15 +39,16 @@ public class ApplyRequest {
      * have to be inserted manually for it to be submitted.
      */
     @Nullable
-    private Boolean noApplicants;
+    private Boolean noNewApplicants;
 
     /**
-     * If <code>noApplicants</code> is set to true. It will use
-     * the <code>membershipIds</code> property to attach existing
-     * members to the application.
+     * If <code>noNewApplicants</code> is set to true. It will use
+     * the <code>applicantIds</code> property to attach existing
+     * applicants to the application.
      */
     @Nullable
-    private LinkedHashSet<String> membershipNumbers;
+    private LinkedHashSet<Long> applicantIds;
+
 
     /**
      * Applicants applying under this application.
