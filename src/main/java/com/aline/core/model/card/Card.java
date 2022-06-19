@@ -16,6 +16,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -55,5 +56,9 @@ public class Card {
     @Length(min = 3, max = 3)
     @Pattern(regexp = "\\d{3}")
     private String securityCode;
+
+    @ManyToOne
+    @JoinColumn(name = "card_issuer_name")
+    private CardIssuer cardIssuer;
 
 }
