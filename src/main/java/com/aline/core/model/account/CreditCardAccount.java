@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 import java.util.List;
 
 @Entity
@@ -25,6 +26,7 @@ import java.util.List;
 @SuperBuilder
 @DiscriminatorValue(AccountType.Values.CREDIT_CARD)
 public class CreditCardAccount extends Account {
+    private int availableCredit;
     @OneToOne
     private CreditLine creditLine;
     @OneToMany
@@ -33,4 +35,28 @@ public class CreditCardAccount extends Account {
     @OneToMany
     @JoinTable(name = "cc_account_payment_history")
     private List<PaymentRecord> paymentHistory;
+
+    @Transient
+    public void decreaseAvailableCredit(int amount) {
+        availableCredit -= amount;
+    }
+
+    @Transient
+    public void increaseAvailableCredit(int amount) {
+        availableCredit += amount;
+    }
+
+    // Reversed functionality for credit cards
+    // Balance is how much is owed instead of how much is available
+    @Override
+    public void increaseBalance(int amount) {
+        setBalance(getBalance() - amount);
+    }
+
+    // Reversed functionality for credit cards
+    // Balance is how much is owed instead of how much is available
+    @Override
+    public void decreaseBalance(int amount) {
+        setBalance(getBalance() + amount);
+    }
 }
